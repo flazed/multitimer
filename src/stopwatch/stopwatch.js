@@ -61,7 +61,7 @@ export default function Stopwatch() {
                     {time.sec > 9 ? time.sec : '0'+time.sec}.
                     {time.millisec > 9 ? time.millisec : '0'+time.millisec}
             </span>
-            <div>
+            <div className="btns">
                 <button className={classnames({'active': status})} onClick={changeStatus}>{status ? 'Stop' : 'Start'}</button>
                 <button onClick={resetTimer}>Reset</button>
             </div>

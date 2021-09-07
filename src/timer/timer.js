@@ -84,17 +84,17 @@ export default function Timer() {
 
     return (
         <>
-            <div>
-                <input type="number" disabled={status} min="0" max="90" value={start.hour} onInput={(e) => inputValue(e, 'hour')}/>h
-                <input type="number" disabled={status} min="0" max="59" value={start.min} onInput={(e) => inputValue(e, 'min', 59)}/>m
-                <input type="number" disabled={status} min="0" max="59" value={start.sec} onInput={(e) => inputValue(e, 'sec', 59)}/>s
+            <div className="setTime_inputs">
+                <label><input type="number" disabled={status} min="0" max="90" value={start.hour} onInput={(e) => inputValue(e, 'hour')}/>h</label>
+                <label><input type="number" disabled={status} min="0" max="59" value={start.min} onInput={(e) => inputValue(e, 'min', 59)}/>m</label>
+                <label><input type="number" disabled={status} min="0" max="59" value={start.sec} onInput={(e) => inputValue(e, 'sec', 59)}/>s</label>
             </div>
             <span>
                     {end.hour > 9 ? end.hour : '0'+end.hour}:
                     {end.min > 9 ? end.min : '0'+end.min}:
                     {end.sec > 9 ? end.sec : '0'+end.sec}           
             </span>
-            <div>
+            <div className="btns">
                 <button className={classnames({'active': status})} onClick={changeStatus}>{status ? 'Stop' : 'Start'}</button>
                 <button onClick={resetTimer}>Reset</button>
             </div>
